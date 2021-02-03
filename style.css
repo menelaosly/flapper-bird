@@ -1,0 +1,114 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: rgb(35, 86, 123);
+}
+
+.game {
+    width: 500px;
+    height: 400px;
+    background: url("assets/background1.png") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid rgba(23, 75, 140, 0.993);
+    border-radius: 10px;
+}
+
+.bird {
+    width: 40px;
+    object-fit: contain;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform: translate(-40px, -30px) rotateZ(25deg);
+    z-index: 3;
+    transition: all .05s ease-in-out;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    right: -100px;
+    height: 250px;
+    width: 103px;
+    transform-origin: center center;
+}
+
+.pipe img {
+    height: 100%;
+    object-fit: fill;
+    left: -15px;
+    position: relative;
+}
+
+.board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.board h3 {
+    margin: 5px;
+}
+
+.board #score {
+    color: rgb(254 191 0);
+}
+
+.board h4 {
+    margin: 5px;
+}
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(65, 86, 151, 0.424);
+    color: white;
+    z-index: 6;
+    text-shadow: 4px 4px black;
+}
+
+#overlay h2 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+#overlay h1 {
+    text-align: center;
+    margin: 5px 0;
+    visibility: hidden;
+}
+
+#overlay #new-best {
+    font-size: 2em;
+    color: rgb(254 191 0);
+    text-shadow: 4px 4px black;
+}
+
+@keyframes up {
+    0% {
+        transform: translate(-40px, -30px) rotateZ(25deg);
+    }
+
+    100% {
+        transform: translate(-40px, -30px) rotateZ(-90deg);
+    }
+}
