@@ -5,6 +5,8 @@ const PIPE_HEIGHT = 250;
 const PIPE_DIF = PIPE_HEIGHT + 170;
 const INITIAL_SPEED = 10;
 
+let mutedSound = false;
+
 const game = document.getElementById("game");
 const bird = document.getElementById("bird");
 const board = document.getElementById("board");
@@ -12,6 +14,8 @@ const scoreEl = document.getElementById("score");
 const bestEl = document.getElementById("best");
 const overlay = document.getElementById("overlay");
 const newbestEl = overlay.getElementsByTagName("h1")[0];
+const soundBtn = document.querySelector(".sound-btn");
+
 let timeInterval;
 let pipes = [];
 let lost = true;
@@ -166,6 +170,7 @@ const checkKeyPress = () => {
         init();
     }
     else {
+        playSound();
         moveBird();
     }
 }
@@ -183,6 +188,20 @@ const moveBird = () => {
         duration: 300,
         easing: "ease-in-out"
     })
+}
+
+const toggleSound = () => {
+    if(!soundBtn) return;
+    mutedSound = !mutedSound;
+    soundBtn.src = `./assets/${mutedSound? 'mute': 'sound'}.svg`;
+}
+
+const playSound = () => {
+    if(mutedSound) return;
+    var audio = document.createElement("audio");
+    audio.volume = .5;
+    audio.src = "./assets/jump.mp3";
+    audio.play();
 }
 
 window.addEventListener("keydown",checkKeyPress);

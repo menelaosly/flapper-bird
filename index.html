@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flapper Bird</title>
+    <link rel="icon" href="/public/favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,6 +15,7 @@
         <div class="board" id="board">
             <h3><b> Score: </b><span id="score"></span></h3>
             <h4><b>Best: </b><span id="best"></span></h4>
+            <img src="./assets/sound.svg" class="sound-btn" onclick="toggleSound()" />
         </div>
 
         <div id="overlay">
@@ -21,7 +23,6 @@
             <h2>Press any key to play</h2>
         </div>
     </div>
-
 
     <script src="./game.js"></script>
 </body>

@@ -55,7 +55,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 10;
+    width: 100%;
 }
 
 .board h3 {
@@ -68,6 +69,14 @@ body {
 
 .board h4 {
     margin: 5px;
+}
+
+.sound-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    height: 35px;
+    cursor: pointer;
 }
 
 #overlay {
@@ -102,6 +111,8 @@ body {
     color: rgb(254 191 0);
     text-shadow: 4px 4px black;
 }
+
+
 
 @keyframes up {
     0% {
